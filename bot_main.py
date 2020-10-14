@@ -1,7 +1,7 @@
 import discord
 from commands import Commands
 
-TOKEN = "NzE1ODQ2NDA1OTMwODc2OTgw.XtDJ6g.xf98SLNgGXkhl7o-qobCHZkIuNw"
+TOKEN = "your bot token"
 
 class Bot(discord.Client):
     async def on_ready(self):
