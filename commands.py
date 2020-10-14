@@ -163,6 +163,6 @@ class Commands:
     # 今日明日の天気を表示する
     async def tenki(self, message: discord.message):
         sc = scraping()
-        whether = sc.forecast()
+        whether = sc.forecast("名古屋", "横浜")
 
         await self.send_message(message, whether)

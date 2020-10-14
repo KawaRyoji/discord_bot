@@ -1,7 +1,6 @@
 import discord
 from commands import Commands
-
-TOKEN = "your bot token"
+import sys
 
 class Bot(discord.Client):
     async def on_ready(self):
@@ -14,5 +13,14 @@ class Bot(discord.Client):
         ins = Commands(self)
         await ins.run_commands(message)
 
-bot = Bot()
-bot.run(TOKEN)
+if __name__ == "__main__":
+    args = sys.argv
+
+    if len(args) != 2:
+        print("Input your bot token to command line argument")
+        exit()
+
+    TOKEN = args[1]
+
+    bot = Bot()
+    bot.run(TOKEN)
